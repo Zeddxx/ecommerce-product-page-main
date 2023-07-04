@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar container">
+      <div class="wish-list">
+        <h3>Cart</h3>
+        <div class="line"></div>
+        <div class="product-lists" id="lists">
+          <p class="cart-message">Your cart is empty</p>
+          <div class="cartList"></div>
+          </div>
+          <button class="checkout">Checkout</button>
+        </div>
+      </div>
+      <div class="inner-nav flex">
+        <div class="logo-nd-lists">
+          <div class="hamburger-btn">
+            <div class="open-menu" onclick="openMenu()">
+              <img class="selectDisable"  src="./images/icon-menu.svg" alt="Menu">
+            </div>
+            <div class="close-menu hide" onclick="closeMenu()">
+              <img class="selectDisable"  src="./images/icon-close.svg" alt="Close btn">
+            </div>
+          </div>
+          <div class="logo-div">
+            <img src="./images/logo.svg" alt="Main Page Logo" />
+          </div>
+          <ul class="lists-items flex">
+            <li class="active"><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="cart-nd-acc selectDisable">
+          <!-- Cart starts -->
+          <div class="cart selectDisable" id="view-cart">
+            <img src="./images/icon-cart.svg" alt="Cart" />
+            <span class="quantity-count"><p id="count"></p></span>
+          </div>
+          <!-- Cart ends -->
+
+          <!-- account Starts -->
+          <div class="account">
+            <span class="selectDisable"
+              ><img src="./images/image-avatar.png" alt="User Image account"
+            /></span>
+          </div>
+          <!-- account Ends -->
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="carousel">
+        <div class="inner-carousel">
+          <!-- close btn starts -->
+          <div class="close selectDisable">
+            <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                fill="#69707D"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <!-- close btn ends -->
+
+          <div class="show-image">
+            <div class="main-img">
+              <!-- prev btn starts-->
+              <div class="arrow prev-btn selectDisable">
+                <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 1 3 9l8 8"
+                    stroke="#1D2026"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <!-- prev btn ends -->
+
+              <!-- next btn starts -->
+              <div class="arrow next-btn selectDisable">
+                <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m2 1 8 8-8 8"
+                    stroke="#1D2026"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <!-- next btn ends -->
+            </div>
+            <div class="all-images">
+              <span
+                class="first preview on-show show selectDisable"
+                data-image="./images/image-product-1.jpg"
+              ></span>
+              <span
+                class="sec selectDisable"
+                data-image="./images/image-product-2.jpg"
+              ></span>
+              <span
+                class="third selectDisable"
+                data-image="./images/image-product-3.jpg"
+              ></span>
+              <span
+                class="fourth selectDisable"
+                data-image="./images/image-product-4.jpg"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="product">
+        <div class="preview-container">
+          <div class="preview-mobile">
+            <div class="carousel-slide">
+              <ul class="carousel__track">
+                <li class="carousel__slide current-slide">
+                  <img src="./images/image-product-1.jpg" alt="" />
+                </li>
+                <li class="carousel__slide">
+                  <img src="./images/image-product-2.jpg" alt="" />
+                </li>
+                <li class="carousel__slide">
+                  <img src="./images/image-product-3.jpg" alt="" />
+                </li>
+                <li class="carousel__slide">
+                  <img
+                  src="./images/image-product-4.jpg"
+                    alt="Image"
+                  />
+                </li>
+              </ul>
+            </div>
+            <button class="prev-mob hide">
+              <img src="./images/icon-previous.svg" alt="Prev Btn" />
+            </button>
+            <button class="next-mob">
+              <img src="./images/icon-next.svg" alt="Next btn" />
+            </button>
+            <div class="carousel-nav">
+              <button class="carousel__indicator current-slide"></button><button class="carousel__indicator"></button><button class="carousel__indicator"></button><button class="carousel__indicator"></button>
+            </div>
+          </div>
+          <div class="main-preview selectDisable"></div>
+          <div class="product-thumbnail">
+            <span
+              class="first preview on-show show selectDisable"
+              data-image="./images/image-product-1.jpg"
+            ></span>
+            <span
+              class="sec selectDisable"
+              data-image="./images/image-product-2.jpg"
+            ></span>
+            <span
+              class="third selectDisable"
+              data-image="./images/image-product-3.jpg"
+            ></span>
+            <span
+              class="fourth selectDisable"
+              data-image="./images/image-product-4.jpg"
+            ></span>
+          </div>
+        </div>
+        <div class="title-container">
+          <div class="main-product-details">
+            <div class="heading">
+              <h1>Sneaker company</h1>
+              <h2>Fall Limited Edition Sneakers</h2>
+            </div>
+            <div class="details">
+              <p>
+                These low-profile sneakers are your perfect casual wear
+                companion. Featuring a durable rubber outer sole, they’ll
+                withstand everything the weather can offer.
+              </p>
+            </div>
+            <div class="price">
+              <div class="discounted-price">
+                <span class="current-price"
+                  >$<span id="currentPrice">125.00</span></span
+                >
+                <span class="discount-percent">50%</span>
+              </div>
+              <div class="original-price">
+                <p>$250.00</p>
+              </div>
+            </div>
+            <!-- cart btn starts -->
+            <div class="cart-btn-quantity">
+              <div class="quantity">
+                <span class="minus selectDisable"
+                  ><img src="./images/icon-minus.svg" alt="Minus Btn"
+                /></span>
+                <span class="trigger selectDisable" id="trigger">1</span>
+                <span class="plus selectDisable"
+                  ><img src="./images/icon-plus.svg" alt="Plus Btn"
+                /></span>
+              </div>
+              <button class="cart-btn selectDisable" onclick="addToCart()">
+                <span>
+                  <img src="./images/icon-cart-white.svg" alt="Cart Button" />
+                </span>
+                Add to cart
+              </button>
+            </div>
+            <!-- cart btn ends -->
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./src/main.js"></script>
+    <script src="./src/cart.js"></script>
+    <script src="./src/carousel.js"></script>
+  </body>
+</html>
